@@ -1,0 +1,50 @@
+site_name: Bytehouse Ecosystem
+site_dir: site
+nav:
+  - Home: index.md
+  - Language Drivers:
+      - Java:
+          - Bytehouse TCP: java/bytehouse-tcp.md
+          - ClickHouse HTTP: java/clickhouse-http.md
+      - Python:
+          - Bytehouse TCP: python/bytehouse-tcp.md
+          - ClickHouse Connect HTTP: python/clickhouse-connect-http.md
+      - Golang:
+          - Bytehouse TCP: golang/bytehouse-tcp.md
+      - C#:
+          - ClickHouse HTTP: c#/clickhouse-http.md
+      - PHP:
+          - ClickHouse HTTP: php/clickhouse-http.md
+          - ClickHouse TCP: php/clickhouse-tcp.md
+  - SQL Mapper:
+      - MyBatis:
+          - ClickHouse Java HTTP: mybatis/clickhouse-java-http.md
+      - SQLAlchemy:
+          - ClickHouse Connect Python HTTP: sqlalchemy/clickhouse-connect-python-http.md
+  - Data Synchronization:
+      - Airbyte:
+          - ClickHouse Java HTTP: airbyte/clickhouse-java-http.md
+      - DataX:
+          - ClickHouse Java HTTP: datax/clickhouse-java-http.md
+  - Data Transformation:
+      - DBT:
+          - ClickHouse Connect Python HTTP: dbt/clickhouse-connect-python-http.md
+  - Workflow Orchestration:
+      - Airflow:
+          - ClickHouse Connect Python HTTP: airflow/clickhouse-connect-python-http.md
+      - DolphinScheduler:
+          - ByteHouse Java TCP: dolphinscheduler/bytehouse-java-tcp.md
+          - ClickHouse Java HTTP: dolphinscheduler/clickhouse-java-http.md
+  - Business Intelligence:
+      - Superset:
+          - ClickHouse Connect Python HTTP: superset/clickhouse-connect-python-http.md
+      - Tableau:
+          - ClickHouse Java HTTP: tableau/clickhouse-java-http.md
+      - PowerBI:
+          - ClickHouse ODBC HTTP: powerbi/clickhouse-odbc-http.md
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+
