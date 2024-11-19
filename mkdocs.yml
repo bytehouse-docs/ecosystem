@@ -43,6 +43,8 @@ nav:
           - ClickHouse Java HTTP: tableau/clickhouse-java-http.md
       - PowerBI:
           - ClickHouse ODBC HTTP: powerbi/clickhouse-odbc-http.md
+  - Troubleshooting:
+      - Python: troubleshooting/python.md
 
 theme:
   name: material
