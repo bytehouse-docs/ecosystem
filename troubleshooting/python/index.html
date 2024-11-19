@@ -1635,6 +1635,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4-clickhouse_connectdriverexceptionsoperationalerror-error-connection-aborted-connectionreseterror54-connection-reset-by-peer" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. clickhouse_connect.driver.exceptions.OperationalError: Error ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1704,6 +1713,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4-clickhouse_connectdriverexceptionsoperationalerror-error-connection-aborted-connectionreseterror54-connection-reset-by-peer" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. clickhouse_connect.driver.exceptions.OperationalError: Error ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1740,6 +1758,18 @@ HTTP, the port is <code>8123</code>.</p>
 - <code>expected Hello or Exception, got Unknown packet</code></p>
 <h2 id="3-receive-pw-openapiauth-hello-error-fullusername-should-be-in-the-format-accountidfullusername-or-accountnamefullusername">3. receive pw openapiauth hello error: fullUsername should be in the format 'accountID::fullUsername' OR 'accountName::fullUsername'</h2>
 <p>This error is thrown when the username is not correct. For API key authentication, the username should always be <code>bytehouse</code>.</p>
+<h2 id="4-clickhouse_connectdriverexceptionsoperationalerror-error-connection-aborted-connectionreseterror54-connection-reset-by-peer">4. clickhouse_connect.driver.exceptions.OperationalError: Error ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))</h2>
+<p>By default, <code>clickhouse-connect</code> uses non-secure <code>HTTP</code> connection, which would throw this error. We need to add 
+<code>secure=True</code> to the client constructor to use secure connection.</p>
+<pre><code class="language-python">client = clickhouse_connect.get_client(
+    ### other parameters
+    secure=True,
+)
+</code></pre>
+<p>Some other error messages that might indicate the same issue:
+- <code>clickhouse_connect.driver.exceptions.OperationalError: Error ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))</code>
+- <code>urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))</code>
+- <code>ConnectionResetError: [Errno 54] Connection reset by peer</code></p>
 
 
 

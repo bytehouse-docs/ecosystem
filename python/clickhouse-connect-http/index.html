@@ -445,6 +445,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Construction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client Construction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-passing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Passing parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-passing-connection-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Passing connection string
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1672,6 +1714,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Construction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client Construction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-passing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Passing parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-passing-connection-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Passing connection string
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1715,6 +1799,28 @@
 </tr>
 </tbody>
 </table>
+<h2 id="installation">Installation</h2>
+<p>The package can be installed via <code>pip</code>:</p>
+<pre><code class="language-bash">pip install clickhouse-connect
+</code></pre>
+<p>Optionally, you can install <code>cython</code> package to build and enable the C/Cython optimizations</p>
+<pre><code class="language-bash">pip install cython
+</code></pre>
+<h2 id="client-construction">Client Construction</h2>
+<h3 id="1-passing-parameters">1. Passing parameters</h3>
+<pre><code class="language-python">import clickhouse_connect
+
+client = clickhouse_connect.get_client(
+    host=&quot;gateway-v2.bytehouse-cn-{REGION}.volces.com&quot;,
+    port=8123,
+    username=&quot;bytehouse&quot;,
+    password=&quot;{API_KEY}&quot;,
+    database=&quot;{DATABASE}&quot;,
+    secure=True,
+)
+</code></pre>
+<h3 id="2-passing-connection-string">2. Passing connection string</h3>
+<p>TODO</p>
 
 
 
