@@ -25,3 +25,17 @@ Some other error messages that might indicate the same issue:
 
 ## 3. receive pw openapiauth hello error: fullUsername should be in the format 'accountID::fullUsername' OR 'accountName::fullUsername'
 This error is thrown when the username is not correct. For API key authentication, the username should always be `bytehouse`.
+
+## 4. clickhouse_connect.driver.exceptions.OperationalError: Error ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+By default, `clickhouse-connect` uses non-secure `HTTP` connection, which would throw this error. We need to add 
+`secure=True` to the client constructor to use secure connection.
+```python
+client = clickhouse_connect.get_client(
+    ### other parameters
+    secure=True,
+)
+```
+Some other error messages that might indicate the same issue:
+- `clickhouse_connect.driver.exceptions.OperationalError: Error ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))`
+- `urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))`
+- `ConnectionResetError: [Errno 54] Connection reset by peer`
