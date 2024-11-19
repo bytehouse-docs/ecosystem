@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../datax/clickhouse-java-http/">
+        <link rel="prev" href="../clickhouse-connect-http/">
       
       
-        <link rel="next" href="../../airflow/clickhouse-connect-python-http/">
+        <link rel="next" href="../../golang/bytehouse-tcp/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>ClickHouse Connect Python HTTP - Bytehouse Ecosystem</title>
+        <title>ClickHouse Driver TCP - Bytehouse Ecosystem</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#work-in-progress" class="md-skip">
+        <a href="#clickhouse-driver-tcp" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ClickHouse Connect Python HTTP
+              ClickHouse Driver TCP
             
           </span>
         </div>
@@ -208,17 +208,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -232,7 +234,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Language Drivers
@@ -328,17 +330,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -352,7 +356,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -366,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/bytehouse-tcp/" class="md-nav__link">
+      <a href="../bytehouse-tcp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -387,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/clickhouse-connect-http/" class="md-nav__link">
+      <a href="../clickhouse-connect-http/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -405,10 +409,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../python/clickhouse-driver-tcp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ClickHouse Driver TCP
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -417,6 +441,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -994,19 +1047,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1020,7 +1071,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Data Transformation
@@ -1031,19 +1082,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
           <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
@@ -1057,7 +1106,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             DBT
@@ -1068,19 +1117,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../dbt/clickhouse-connect-python-http/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1089,7 +1129,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1555,6 +1594,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1568,9 +1624,34 @@
                   
 
 
-<h1 id="work-in-progress">Work in Progress</h1>
-<p>This page is currently under construction. Please check back later for updates!</p>
-<p>Thank you for your patience.</p>
+<h1 id="clickhouse-driver-tcp">ClickHouse Driver (TCP)</h1>
+<h2 id="overview">Overview</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Description</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Github Repository</strong></td>
+<td><a href="https://github.com/mymarilyn/clickhouse-driver">GitHub - clickhouse-driver</a></td>
+</tr>
+<tr>
+<td><strong>ClickHouse Documentation Page</strong></td>
+<td><a href="https://clickhouse-driver.readthedocs.io/en/latest/">ClickHouse Docs</a></td>
+</tr>
+<tr>
+<td><strong>Base ClickHouse Connect Version</strong></td>
+<td><a href="https://pypi.org/project/clickhouse-driver/0.2.9/">0.2.9</a></td>
+</tr>
+<tr>
+<td><strong>Verified Python Version</strong></td>
+<td>Python 3.8</td>
+</tr>
+</tbody>
+</table>
 
 
 
