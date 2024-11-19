@@ -1,13 +1,14 @@
 # Superset via ClickHouse Connect (HTTP)
 
 ## Overview
-| **Description**                          | **Details**                                                             |
-|------------------------------------------|-------------------------------------------------------------------------|
-| **Superset Official Documentation Page** | [Superset Docs](https://superset.apache.org/docs/intro/)                |
-| **ClickHouse Documentation Page**        | [ClickHouse Docs](https://clickhouse.com/docs/en/integrations/superset) |
-| **Base Superset Version**                | [4.1.0](https://github.com/apache/superset/releases/tag/4.1.0)          |
-| **Base ClickHouse Connect Version**      | [0.8.6](https://pypi.org/project/clickhouse-connect/0.8.6/)             |
-| **Verified Python Version**              | Python 3.8                                                              |
+| **Description**                          | **Details**                                                                                      |
+|------------------------------------------|--------------------------------------------------------------------------------------------------|
+| **Superset Official Documentation Page** | [Superset Docs](https://superset.apache.org/docs/intro/)                                         |
+| **ClickHouse Documentation Page**        | [ClickHouse Docs](https://clickhouse.com/docs/en/integrations/superset)                          |
+| **Base Superset Version**                | [4.1.0](https://github.com/apache/superset/releases/tag/4.1.0)                                   |
+| **Base ClickHouse Connect Version**      | [0.8.6](https://pypi.org/project/clickhouse-connect/0.8.6/)                                      |
+| **ByteHouse Connect Version**            | [0.8.6+bytehouse](https://github.com/bytehouse-docs/ecosystem/tree/main/dist/clickhouse-connect) |
+| **Verified Python Version**              | Python 3.8                                                                                       |
 
 ## Installation
 `ByteHouse` cannot natively support `Superset` via `ClickHouse Connect`. We require some additional modifications to the
