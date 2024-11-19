@@ -1449,6 +1449,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#prepare-sample-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare Sample Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-superset-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Superset Dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-superset-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Superset Chart
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1726,6 +1753,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#prepare-sample-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare Sample Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-superset-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Superset Dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-superset-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Superset Chart
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1850,6 +1904,59 @@ password: admin
 </tr>
 </tbody>
 </table>
+<h2 id="prepare-sample-data">Prepare Sample Data</h2>
+<p>Execute following queries in <code>ByteHouse</code> to prepare sample data. You can execute these queries via 
+<code>ByteHouse Console</code> or <code>Superset SQL Lab</code>.</p>
+<pre><code class="language-sql">CREATE DATABASE test_db;
+
+CREATE TABLE test_db.online_store_sales (
+    order_id String,
+    order_date DateTime,
+    customer_id String,
+    product_id String,
+    category String,
+    sub_category String,
+    region String,
+    sales_amount Float64,
+    quantity UInt32
+) 
+ENGINE = CnchMergeTree()
+PARTITION BY toYYYYMM(order_date)
+ORDER BY (order_date, customer_id);
+
+INSERT INTO test_db.online_store_sales VALUES
+('OID001', '2024-11-01 10:00:00', 'CID001', 'PID001', 'Electronics', 'Smartphones', 'North America', 899.99, 2),
+('OID004', '2024-11-02 09:20:00', 'CID004', 'PID004', 'Furniture', 'Desks', 'North America', 1599.99, 5),
+('OID005', '2024-11-02 14:10:00', 'CID005', 'PID005', 'Home Decor', 'Lamps', 'South America', 49.99, 100),
+('OID006', '2024-11-02 17:50:00', 'CID006', 'PID006', 'Electronics', 'Tablets', 'Europe', 799.99, 7),
+('OID007', '2024-11-03 11:00:00', 'CID007', 'PID007', 'Clothing', 'Jackets', 'Asia', 149.99, 25),
+('OID008', '2024-11-03 13:40:00', 'CID008', 'PID008', 'Clothing', 'Shoes', 'Africa', 89.99, 50),
+('OID010', '2024-11-04 19:30:00', 'CID010', 'PID010', 'Electronics', 'Cameras', 'North America', 399.99, 3),
+('OID013', '2024-11-05 08:50:00', 'CID013', 'PID013', 'Electronics', 'Headphones', 'North America', 99.99, 100),
+('OID014', '2024-11-05 11:30:00', 'CID014', 'PID014', 'Furniture', 'Coffee Tables', 'Asia', 499.99, 50),
+('OID015', '2024-11-05 14:00:00', 'CID015', 'PID015', 'Clothing', 'T-Shirts', 'Europe', 19.99, 300),
+('OID016', '2024-11-06 09:40:00', 'CID016', 'PID016', 'Furniture', 'Bookshelves', 'North America', 999.99, 10),
+('OID017', '2024-11-06 13:25:00', 'CID017', 'PID017', 'Electronics', 'Laptops', 'Europe', 2299.99, 4),
+('OID020', '2024-11-07 14:00:00', 'CID020', 'PID020', 'Home Decor', 'Rugs', 'Africa', 199.99, 20);
+</code></pre>
+<h2 id="create-superset-dataset">Create Superset Dataset</h2>
+<ol>
+<li>Click on the <code>+</code> button in the top right corner of the screen &amp; choose <code>Data</code> &amp; choose <code>Create dataset</code>.
+<img alt="Create dataset" src="../create-dataset-1.png" /></li>
+<li>Choose <code>DATABASE</code>, <code>SCHEMA</code> &amp; <code>TABLE</code> from the dropdown menu &amp; click on the <code>CREATE DATASET AND CREATE CHART</code> button.
+<img alt="Create dataset" src="../create-dataset-2.png" /></li>
+</ol>
+<h2 id="create-superset-chart">Create Superset Chart</h2>
+<ol>
+<li>From <code>Charts</code> tab, choose the previously created dataset &amp; choose <code>Line Chart</code> as chart type. Proceed to click on 
+the <code>CREATE NEW CHART</code> button.
+<img alt="Create chart" src="../create-chart-1.png" /></li>
+<li>Choose <code>order_date</code> column as <code>X-AXIS</code>, <code>Day</code> as <code>TIME GRAIN</code> &amp; <code>COUNT(*)</code> as <code>METRIC</code>. Proceed to click on the 
+<code>CREATE CHART</code> button.
+<img alt="Create chart" src="../create-chart-2.png" /></li>
+<li>The chart will be displayed as shown below.
+<img alt="Create chart" src="../create-chart-3.png" /></li>
+</ol>
 
 
 
