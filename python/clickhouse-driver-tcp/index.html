@@ -466,6 +466,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-with-compression-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation with compression support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-with-numpy-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation with NumPy support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Construction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client Construction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-passing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Passing parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-passing-connection-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Passing connection string
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1574,6 +1640,69 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Troubleshooting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1606,6 +1735,72 @@
       Overview
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-with-compression-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation with compression support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-with-numpy-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation with NumPy support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Construction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client Construction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-passing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Passing parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-passing-connection-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Passing connection string
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1643,7 +1838,7 @@
 <td><a href="https://clickhouse-driver.readthedocs.io/en/latest/">ClickHouse Docs</a></td>
 </tr>
 <tr>
-<td><strong>Base ClickHouse Connect Version</strong></td>
+<td><strong>Base ClickHouse Driver Version</strong></td>
 <td><a href="https://pypi.org/project/clickhouse-driver/0.2.9/">0.2.9</a></td>
 </tr>
 <tr>
@@ -1652,6 +1847,43 @@
 </tr>
 </tbody>
 </table>
+<h2 id="installation">Installation</h2>
+<p><code>gcc</code>, <code>python</code> and <code>linux</code> headers are required to build the driver. Example for <code>python:alpine</code> docker image:</p>
+<pre><code class="language-bash">apk add gcc musl-dev
+</code></pre>
+<p>The package can be installed via <code>pip</code>:</p>
+<pre><code class="language-bash">pip install clickhouse-driver
+</code></pre>
+<h3 id="installation-with-compression-support">Installation with compression support</h3>
+<p>You can install extras packages if you need compression support. Example of <code>LZ4</code> compression requirements installation:</p>
+<pre><code class="language-bash">pip install clickhouse-driver[lz4]
+</code></pre>
+<p>You also can specify multiple extras by using comma. Install <code>LZ4</code> and <code>ZSTD</code> requirements:</p>
+<pre><code class="language-bash">pip install clickhouse-driver[lz4,zstd]
+</code></pre>
+<h3 id="installation-with-numpy-support">Installation with NumPy support</h3>
+<p>You can install additional packages (<code>NumPy</code> and <code>Pandas</code>) if you need NumPy support:</p>
+<pre><code class="language-bash">pip install clickhouse-driver[numpy]
+</code></pre>
+<h2 id="client-construction">Client Construction</h2>
+<h3 id="1-passing-parameters">1. Passing parameters</h3>
+<pre><code class="language-python">from clickhouse_driver import Client
+
+client = Client(
+    host=&quot;gateway-v2.bytehouse-cn-{REGION}.volces.com&quot;,
+    port=19000,
+    user=&quot;bytehouse&quot;,
+    password=&quot;{API_KEY}&quot;,
+    database=&quot;{DATABASE}&quot;,
+    secure=True,
+)
+</code></pre>
+<h3 id="2-passing-connection-string">2. Passing connection string</h3>
+<pre><code class="language-python">from clickhouse_driver import Client
+
+uri = &quot;clickhouse://bytehouse:{API_KEY@gateway-v2.bytehouse-cn-{REGION}.volces.com:19000/{DATABASE}?secure=True&quot;
+client = Client.from_url(uri)
+</code></pre>
 
 
 
