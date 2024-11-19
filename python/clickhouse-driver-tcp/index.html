@@ -1881,7 +1881,7 @@ client = Client(
 <h3 id="2-passing-connection-string">2. Passing connection string</h3>
 <pre><code class="language-python">from clickhouse_driver import Client
 
-uri = &quot;clickhouse://bytehouse:{API_KEY@gateway-v2.bytehouse-cn-{REGION}.volces.com:19000/{DATABASE}?secure=True&quot;
+uri = &quot;clickhouse://bytehouse:{API_KEY}@gateway-v2.bytehouse-cn-{REGION}.volces.com:19000/{DATABASE}?secure=True&quot;
 client = Client.from_url(uri)
 </code></pre>
 

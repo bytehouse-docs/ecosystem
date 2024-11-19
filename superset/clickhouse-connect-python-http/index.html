@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#work-in-progress" class="md-skip">
+        <a href="#superset-via-clickhouse-connect-http" class="md-skip">
           Skip to content
         </a>
       
@@ -1377,6 +1377,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ClickHouse Connect Python HTTP
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1386,6 +1397,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-into-superset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log into Superset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-superset-to-bytehouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connect Superset to ByteHouse
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1618,6 +1684,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-into-superset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log into Superset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-superset-to-bytehouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connect Superset to ByteHouse
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1631,9 +1741,80 @@
                   
 
 
-<h1 id="work-in-progress">Work in Progress</h1>
-<p>This page is currently under construction. Please check back later for updates!</p>
-<p>Thank you for your patience.</p>
+<h1 id="superset-via-clickhouse-connect-http">Superset via ClickHouse Connect (HTTP)</h1>
+<h2 id="overview">Overview</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Description</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Superset Official Documentation Page</strong></td>
+<td><a href="https://superset.apache.org/docs/intro/">Superset Docs</a></td>
+</tr>
+<tr>
+<td><strong>ClickHouse Documentation Page</strong></td>
+<td><a href="https://clickhouse.com/docs/en/integrations/superset">ClickHouse Docs</a></td>
+</tr>
+<tr>
+<td><strong>Base Superset Version</strong></td>
+<td><a href="https://github.com/apache/superset/releases/tag/4.1.0">4.1.0</a></td>
+</tr>
+<tr>
+<td><strong>Base ClickHouse Connect Version</strong></td>
+<td><a href="https://pypi.org/project/clickhouse-connect/0.8.6/">0.8.6</a></td>
+</tr>
+<tr>
+<td><strong>Verified Python Version</strong></td>
+<td>Python 3.8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="installation">Installation</h2>
+<p>ByteHouse cannot natively support Superset via ClickHouse Connect. We require some additional modifications to the
+ClickHouse Connect package. Modified version of ClickHouse Connect is available here
+https://github.com/bytehouse-docs/ecosystem/tree/main/dist/clickhouse-connect. </p>
+<p>You can install it via <code>pip</code>:</p>
+<pre><code class="language-bash">https://github.com/bytehouse-docs/ecosystem/raw/main/dist/clickhouse-connect/clickhouse-connect-0.8.6+bytehouse.tar.gz
+</code></pre>
+<p>The complete installation instructions can be found in the Superset Official Documentation Page. Installation via Docker
+is given below for quick reference:</p>
+<pre><code class="language-bash">git clone https://github.com/apache/superset.git
+cd superset
+git checkout 4.1.0
+echo &quot;https://github.com/bytehouse-docs/ecosystem/raw/main/dist/clickhouse-connect/clickhouse-connect-0.8.6+bytehouse.tar.gz&quot; &gt;&gt; ./requirements/local.txt
+docker compose -f docker-compose-image-tag.yml up
+</code></pre>
+<h2 id="log-into-superset">Log into Superset</h2>
+<p>Once the installation is complete, you can log into Superset by visiting <code>http://localhost:8088</code> in your browser with
+the default created account:</p>
+<pre><code class="language-bash">username: admin
+password: admin
+</code></pre>
+<h2 id="connect-superset-to-bytehouse">Connect Superset to ByteHouse</h2>
+<ol>
+<li>Click on the <code>Settings</code> tab in the top right corner of the screen &amp; choose <code>Database Connections</code>.
+<img alt="Create database connection" src="../connect-to-bytehouse-1.png" /></li>
+<li>Click on the <code>+ DATABASE</code> button to create a new database connection.
+<img alt="Create database connection" src="../connect-to-bytehouse-2.png" /></li>
+<li>Choose <code>ClickHouse Connect (SuperSet)</code> from the available databases' dropdown menu.
+<img alt="Create database connection" src="../connect-to-bytehouse-3.png" /></li>
+<li>Fill in the connection details:
+<img alt="Create database connection" src="../connect-to-bytehouse-4.png" />
+| <strong>Description</strong>            | <strong>Details</strong>                                         |
+|----------------------------|-----------------------------------------------------|
+| <strong>HOST</strong>                   | gateway-v2.bytehouse-cn-{REGION}.volces.com         |
+| <strong>PORT</strong>                   | 19000                                               |
+| <strong>DATABASE NAME</strong>          | Database name                                       |
+| <strong>USERNAME</strong>               | bytehouse                                           |
+| <strong>PASSWORD</strong>               | ByteHouse API Key                                   |
+| <strong>DISPLAY NAME</strong>           | Display name as you want                            |
+| <strong>ADDITIONAL PARAMETERS</strong>  | secure=True&amp;compress=False                          |
+| <strong>SSL</strong>                    | Needs to be turned on                               |</li>
+</ol>
 
 
 
