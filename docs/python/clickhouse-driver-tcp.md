@@ -52,6 +52,6 @@ client = Client(
 ```python
 from clickhouse_driver import Client
 
-uri = "clickhouse://bytehouse:{API_KEY@gateway-v2.bytehouse-cn-{REGION}.volces.com:19000/{DATABASE}?secure=True"
+uri = "clickhouse://bytehouse:{API_KEY}@gateway-v2.bytehouse-cn-{REGION}.volces.com:19000/{DATABASE}?secure=True"
 client = Client.from_url(uri)
 ```
