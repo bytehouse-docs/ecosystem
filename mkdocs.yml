@@ -37,8 +37,7 @@ nav:
           - ByteHouse Java TCP: dolphinscheduler/bytehouse-java-tcp.md
           - ClickHouse Java HTTP: dolphinscheduler/clickhouse-java-http.md
   - Business Intelligence:
-      - Superset:
-          - ClickHouse Connect Python HTTP: superset/clickhouse-connect-python-http.md
+      - Superset via ClickHouse Connect (HTTP): superset/clickhouse-connect-http.md
       - Tableau:
           - ClickHouse Java HTTP: tableau/clickhouse-java-http.md
       - PowerBI:
