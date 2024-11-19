@@ -9,6 +9,7 @@ nav:
       - Python:
           - Bytehouse TCP: python/bytehouse-tcp.md
           - ClickHouse Connect HTTP: python/clickhouse-connect-http.md
+          - ClickHouse Driver TCP: python/clickhouse-driver-tcp.md
       - Golang:
           - Bytehouse TCP: golang/bytehouse-tcp.md
       - C#:
