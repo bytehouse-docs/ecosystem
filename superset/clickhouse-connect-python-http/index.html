@@ -1774,14 +1774,14 @@
 </tbody>
 </table>
 <h2 id="installation">Installation</h2>
-<p>ByteHouse cannot natively support Superset via ClickHouse Connect. We require some additional modifications to the
-ClickHouse Connect package. Modified version of ClickHouse Connect is available here
-https://github.com/bytehouse-docs/ecosystem/tree/main/dist/clickhouse-connect. </p>
+<p><code>ByteHouse</code> cannot natively support <code>Superset</code> via <code>ClickHouse Connect</code>. We require some additional modifications to the
+<code>ClickHouse Connect</code> package. Modified version is available here
+<a href="https://github.com/bytehouse-docs/ecosystem/tree/main/dist/clickhouse-connect">ByteHouse modified connector</a>. </p>
 <p>You can install it via <code>pip</code>:</p>
 <pre><code class="language-bash">https://github.com/bytehouse-docs/ecosystem/raw/main/dist/clickhouse-connect/clickhouse-connect-0.8.6+bytehouse.tar.gz
 </code></pre>
-<p>The complete installation instructions can be found in the Superset Official Documentation Page. Installation via Docker
-is given below for quick reference:</p>
+<p>The complete installation instructions can be found in the <code>Superset</code> official documentation Page. Installation via 
+<code>Docker</code> is given below for quick reference:</p>
 <pre><code class="language-bash">git clone https://github.com/apache/superset.git
 cd superset
 git checkout 4.1.0
@@ -1789,7 +1789,7 @@ echo &quot;https://github.com/bytehouse-docs/ecosystem/raw/main/dist/clickhouse-
 docker compose -f docker-compose-image-tag.yml up
 </code></pre>
 <h2 id="log-into-superset">Log into Superset</h2>
-<p>Once the installation is complete, you can log into Superset by visiting <code>http://localhost:8088</code> in your browser with
+<p>Once the installation is complete, you can log into <code>Superset</code> by visiting <code>http://localhost:8088</code> in your browser with
 the default created account:</p>
 <pre><code class="language-bash">username: admin
 password: admin
@@ -1802,19 +1802,51 @@ password: admin
 <img alt="Create database connection" src="../connect-to-bytehouse-2.png" /></li>
 <li>Choose <code>ClickHouse Connect (SuperSet)</code> from the available databases' dropdown menu.
 <img alt="Create database connection" src="../connect-to-bytehouse-3.png" /></li>
-<li>Fill in the connection details:
-<img alt="Create database connection" src="../connect-to-bytehouse-4.png" />
-| <strong>Description</strong>            | <strong>Details</strong>                                         |
-|----------------------------|-----------------------------------------------------|
-| <strong>HOST</strong>                   | gateway-v2.bytehouse-cn-{REGION}.volces.com         |
-| <strong>PORT</strong>                   | 19000                                               |
-| <strong>DATABASE NAME</strong>          | Database name                                       |
-| <strong>USERNAME</strong>               | bytehouse                                           |
-| <strong>PASSWORD</strong>               | ByteHouse API Key                                   |
-| <strong>DISPLAY NAME</strong>           | Display name as you want                            |
-| <strong>ADDITIONAL PARAMETERS</strong>  | secure=True&amp;compress=False                          |
-| <strong>SSL</strong>                    | Needs to be turned on                               |</li>
+<li>Fill in the connection details as shown below &amp; click on the <code>CONNECT</code> button.
+<img alt="Create database connection" src="../connect-to-bytehouse-4.png" /></li>
 </ol>
+<table>
+<thead>
+<tr>
+<th><strong>Description</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HOST</td>
+<td>gateway-v2.bytehouse-cn-{REGION}.volces.com</td>
+</tr>
+<tr>
+<td>PORT</td>
+<td>19000</td>
+</tr>
+<tr>
+<td>DATABASE NAME</td>
+<td>Database name</td>
+</tr>
+<tr>
+<td>USERNAME</td>
+<td>bytehouse</td>
+</tr>
+<tr>
+<td>PASSWORD</td>
+<td>ByteHouse API Key</td>
+</tr>
+<tr>
+<td>DISPLAY NAME</td>
+<td>Display name as you want</td>
+</tr>
+<tr>
+<td>ADDITIONAL PARAMETERS</td>
+<td>secure=True&amp;compress=False</td>
+</tr>
+<tr>
+<td>SSL</td>
+<td>Needs to be turned on</td>
+</tr>
+</tbody>
+</table>
 
 
 
