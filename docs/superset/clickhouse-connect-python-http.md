@@ -39,17 +39,12 @@ password: admin
 
 ## Connect Superset to ByteHouse
 1. Click on the `Settings` tab in the top right corner of the screen & choose `Database Connections`.
-<br>
-<img src="./connect-to-bytehouse-1.png" height="350">
+![Create database connection](./connect-to-bytehouse-1.png)
 2. Click on the `+ DATABASE` button to create a new database connection.
-<br>
-<img src="./connect-to-bytehouse-2.png" height="100">
+![Create database connection](./connect-to-bytehouse-2.png)
 3. Choose `ClickHouse Connect (SuperSet)` from the available databases' dropdown menu.
-<br>
-<img src="./connect-to-bytehouse-3.png" height="350">
+![Create database connection](./connect-to-bytehouse-3.png)
 4. Fill in the connection details as shown below & click on the `CONNECT` button.
-<br>
-<img src="./connect-to-bytehouse-4.png" height="350">
 
 | **Description**       | **Details**                                 |
 |-----------------------|---------------------------------------------|
@@ -61,6 +56,7 @@ password: admin
 | DISPLAY NAME          | Display name as you want                    |
 | ADDITIONAL PARAMETERS | secure=True&compress=False                  |
 | SSL                   | Needs to be turned on                       |
+![Create database connection](./connect-to-bytehouse-4.png)
 
 
 
