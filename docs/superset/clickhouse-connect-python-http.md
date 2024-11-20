@@ -17,7 +17,7 @@
 
 You can install it via `pip`:
 ```bash
-https://github.com/bytehouse-docs/ecosystem/raw/main/dist/clickhouse-connect/clickhouse-connect-0.8.6+bytehouse.tar.gz
+pip install https://github.com/bytehouse-docs/ecosystem/raw/main/dist/clickhouse-connect/clickhouse-connect-0.8.6+bytehouse.tar.gz
 ```
 
 The complete installation instructions can be found in the `Superset` official documentation Page. Installation via 
