@@ -96,7 +96,7 @@ for row in rows:
 | IPv4/IPv6                        | IPv4Address/IPv6Address, int, long, str    | IPv4Address/IPv6Address         |
 
 ## Specifying Server Settings
-if setting is supported by ByteHouse server (e.g. virtual_warehouse) and missed in the open source driver package, it 
+if setting is supported by `ByteHouse` server (e.g. `virtual_warehouse`) and missed in the open source driver package, it 
 can be added by monkey patching. Serialization type of the setting value needs to be provided.
 ```python
 from clickhouse_driver import Client
@@ -124,7 +124,7 @@ query_id = "bbd7dea3-eb63-4a21-b727-f55b420a7223"
 client.execute("SELECT 1", query_id=query_id)
 ```
 ## Inserting data from Pandas dataframe
-`'use_numpy': True` setting is required for Numpy / Pandas package support.
+`'use_numpy': True` setting is required for `Numpy` / `Pandas` package support.
 ```python
 from clickhouse_driver import Client
 import pandas as pd
@@ -160,14 +160,14 @@ print(df_select)
 ```
 
 ## Inserting data from CSV file
-Let’s assume you have the following data in CSV file:
+Let’s assume you have the following data in `CSV` file:
 ```csv
 time,order,qty
 2019-08-01 15:23:14,New order1,5
 2019-08-05 09:14:45,New order2,3
 2019-08-13 12:20:32,New order3,7
 ```
-Data can be inserted into ClickHouse in the following way:
+Data can be inserted into `ByteHouse` in the following way:
 ```python
 from csv import DictReader
 from datetime import datetime
