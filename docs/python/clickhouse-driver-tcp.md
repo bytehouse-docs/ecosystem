@@ -96,7 +96,24 @@ for row in rows:
 | IPv4/IPv6                        | IPv4Address/IPv6Address, int, long, str    | IPv4Address/IPv6Address         |
 
 ## Specifying Server Settings
+if setting is supported by ByteHouse server (e.g. virtual_warehouse) and missed in the open source driver package, it 
+can be added by monkey patching. Serialization type of the setting value needs to be provided.
+```python
+from clickhouse_driver import Client
+from clickhouse_driver.settings.available import settings as available_settings, SettingString
 
+available_settings['virtual_warehouse'] = SettingString
+
+client = Client(
+    host="gateway-v2.bytehouse-cn-{REGION}.volces.com",
+    port=19000,
+    user="bytehouse",
+    password="{API_KEY}",
+    database="{DATABASE}",
+    secure=True,
+    settings={"virtual_warehouse": "vw-123456789-vw-name"},
+)
+```
 ## Specifying Query ID
 ```python
 from clickhouse_driver import Client
@@ -176,6 +193,41 @@ client.execute(
 )
 client.execute('INSERT INTO data_csv VALUES', iter_csv('data.csv'))
 ```
-## Query data based on Column Names
+## Retrieve data based on Column Names
+`'with_column_types' = True` is required to retrieve data by column names.
+```python
+from clickhouse_driver import Client
 
+# client = Client(...) # Initialize client
 
+client.execute("""
+CREATE TABLE IF NOT EXISTS test_table (
+    int_column Int32,
+    string_column String,
+    array_column Array(Int32)
+) ENGINE = CnchMergeTree()
+ORDER BY int_column
+""")
+
+data_to_insert = [
+    (1, 'First', [1, 2, 3]),
+    (2, 'Second', [4, 5, 6]),
+    (3, 'Third', [7, 8, 9])
+]
+
+client.execute(
+    "INSERT INTO test_table (int_column, string_column, array_column) VALUES",
+    data_to_insert
+)
+
+query = "SELECT * FROM test_table"
+data, columns = client.execute(query, with_column_types=True)
+
+# Use dictionary comprehension to create a dictionary with column names as keys
+column_data = {col_name: [row[i] for row in data] for i, col_name in enumerate([col[0] for col in columns])}
+
+# Access by column names
+print("int_column:", column_data['int_column'])
+print("string_column:", column_data['string_column'])
+print("array_column:", column_data['array_column'])
+```
