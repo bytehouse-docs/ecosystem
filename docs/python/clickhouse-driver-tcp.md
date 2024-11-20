@@ -41,8 +41,59 @@ client = Client.from_url(uri)
 ```
 
 ## Quickstart
+```python
+from clickhouse_driver import Client
+from datetime import datetime
 
+# Connect to ByteHouse
+client = Client(
+    host="gateway-v2.bytehouse-cn-{REGION}.volces.com",
+    port=19000,
+    user="bytehouse",
+    password="{API_KEY}",
+    database="{DATABASE}",
+    secure=True,
+)
+
+# Create Table
+create_table_query = """
+CREATE TABLE IF NOT EXISTS example_table (
+    id Int32,
+    name String,
+    created_at DateTime
+)
+ENGINE = CnchMergeTree()
+ORDER BY id;
+"""
+client.execute(create_table_query)
+
+# Insert Data
+data = [
+    (1, 'Alice', datetime(2024, 11, 20, 10, 30, 0)),
+    (2, 'Bob', datetime(2024, 11, 20, 11, 0, 0)),
+    (3, 'Charlie', datetime(2024, 11, 20, 12, 15, 0)),
+]
+client.execute("INSERT INTO example_table (id, name, created_at) VALUES", data)
+
+# Query Data
+rows = client.execute("SELECT * FROM example_table")
+for row in rows:
+    print(row)
+```
 ## Data Types
+| Type Name                        | Insert Type                                | Select Type                     |
+|----------------------------------|--------------------------------------------|---------------------------------|
+| [U]Int8/16/32/64/128/256         | int, long                                  | int                             |
+| Float32/64                       | float, int, long                           | float                           |
+| Date/Date32                      | date, datetime                             | date                            |
+| DateTime                         | datetime, int, long                        | datetime                        |
+| String/FixedString(N)            | str, bytes                                 | str, bytes                      |
+| Enum8/16                         | Enum, int, long, str                       | str                             |
+| Array(T)                         | list, tuple                                | list                            |
+| Bool                             | bool                                       | bool                            |
+| UUID                             | str, UUID                                  | str                             |
+| Decimal                          | Decimal, float, int, long                  | Decimal                         |
+| IPv4/IPv6                        | IPv4Address/IPv6Address, int, long, str    | IPv4Address/IPv6Address         |
 
 ## Specifying Server Settings
 
@@ -92,6 +143,14 @@ print(df_select)
 ```
 
 ## Inserting data from CSV file
+Let’s assume you have the following data in CSV file:
+```csv
+time,order,qty
+2019-08-01 15:23:14,New order1,5
+2019-08-05 09:14:45,New order2,3
+2019-08-13 12:20:32,New order3,7
+```
+Data can be inserted into ClickHouse in the following way:
 ```python
 from csv import DictReader
 from datetime import datetime
