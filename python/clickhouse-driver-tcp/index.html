@@ -473,30 +473,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installation-with-compression-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation with compression support
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installation-with-numpy-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation with NumPy support
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -529,6 +505,69 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quickstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quickstart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-server-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specifying Server Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-query-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specifying Query ID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inserting-data-from-pandas-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserting data from Pandas dataframe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inserting-data-from-csv-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserting data from CSV file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-data-based-on-column-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query data based on Column Names
+    </span>
+  </a>
   
 </li>
       
@@ -1745,30 +1784,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installation-with-compression-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation with compression support
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installation-with-numpy-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation with NumPy support
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1801,6 +1816,69 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quickstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quickstart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-server-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specifying Server Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-query-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specifying Query ID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inserting-data-from-pandas-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserting data from Pandas dataframe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inserting-data-from-csv-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserting data from CSV file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-data-based-on-column-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query data based on Column Names
+    </span>
+  </a>
   
 </li>
       
@@ -1854,17 +1932,6 @@
 <p>The package can be installed via <code>pip</code>:</p>
 <pre><code class="language-bash">pip install clickhouse-driver
 </code></pre>
-<h3 id="installation-with-compression-support">Installation with compression support</h3>
-<p>You can install extras packages if you need compression support. Example of <code>LZ4</code> compression requirements installation:</p>
-<pre><code class="language-bash">pip install clickhouse-driver[lz4]
-</code></pre>
-<p>You also can specify multiple extras by using comma. Install <code>LZ4</code> and <code>ZSTD</code> requirements:</p>
-<pre><code class="language-bash">pip install clickhouse-driver[lz4,zstd]
-</code></pre>
-<h3 id="installation-with-numpy-support">Installation with NumPy support</h3>
-<p>You can install additional packages (<code>NumPy</code> and <code>Pandas</code>) if you need NumPy support:</p>
-<pre><code class="language-bash">pip install clickhouse-driver[numpy]
-</code></pre>
 <h2 id="client-construction">Client Construction</h2>
 <h3 id="1-passing-parameters">1. Passing parameters</h3>
 <pre><code class="language-python">from clickhouse_driver import Client
@@ -1884,6 +1951,77 @@ client = Client(
 uri = &quot;clickhouse://bytehouse:{API_KEY}@gateway-v2.bytehouse-cn-{REGION}.volces.com:19000/{DATABASE}?secure=True&quot;
 client = Client.from_url(uri)
 </code></pre>
+<h2 id="quickstart">Quickstart</h2>
+<h2 id="data-types">Data Types</h2>
+<h2 id="specifying-server-settings">Specifying Server Settings</h2>
+<h2 id="specifying-query-id">Specifying Query ID</h2>
+<pre><code class="language-python">from clickhouse_driver import Client
+
+# client = Client(...) # Initialize client
+
+query_id = &quot;bbd7dea3-eb63-4a21-b727-f55b420a7223&quot;
+client.execute(&quot;SELECT 1&quot;, query_id=query_id)
+</code></pre>
+<h2 id="inserting-data-from-pandas-dataframe">Inserting data from Pandas dataframe</h2>
+<p><code>'use_numpy': True</code> setting is required for Numpy / Pandas package support.</p>
+<pre><code class="language-python">from clickhouse_driver import Client
+import pandas as pd
+
+client = Client(
+    host=&quot;gateway-v2.bytehouse-cn-{REGION}.volces.com&quot;,
+    port=19000,
+    user=&quot;bytehouse&quot;,
+    password=&quot;{API_KEY}&quot;,
+    database=&quot;{DATABASE}&quot;,
+    secure=True,
+    settings={&quot;use_numpy&quot;: True},
+)
+
+client.execute(
+   'CREATE TABLE test_df (x Int, y String) Engine = CnchMergeTree() ORDER BY tuple()'
+)
+
+df_insert = pd.DataFrame({
+    'x': [1, 2],
+    'y': ['apple', 'banana'],
+}, dtype=object)
+
+client.insert_dataframe('INSERT INTO test_df VALUES', df_insert)
+
+df_select = client.query_dataframe('SELECT * FROM test_df')
+
+print(df_select)
+
+#    x       y
+# 0  1   apple
+# 1  2  banana
+</code></pre>
+<h2 id="inserting-data-from-csv-file">Inserting data from CSV file</h2>
+<pre><code class="language-python">from csv import DictReader
+from datetime import datetime
+
+from clickhouse_driver import Client
+
+# client = Client(...) # Initialize client
+
+def iter_csv(filename):
+    converters = {
+        'time': lambda x: datetime.strptime(x, '%Y-%m-%d %H:%M:%S'),
+        'order': str,
+        'qty': int,
+    }
+    with open(filename, 'r') as f:
+        reader = DictReader(f)
+        for line in reader:
+            yield {k: (converters[k](v) if k in converters else v) for k, v in line.items()}
+
+
+client.execute(
+    'CREATE TABLE IF NOT EXISTS data_csv (time DateTime, order String, qty Int32) Engine = CnchMergeTree() ORDER BY tuple()'
+)
+client.execute('INSERT INTO data_csv VALUES', iter_csv('data.csv'))
+</code></pre>
+<h2 id="query-data-based-on-column-names">Query data based on Column Names</h2>
 
 
 
