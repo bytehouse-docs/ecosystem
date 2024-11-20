@@ -1741,12 +1741,12 @@
 <h2 id="1-clickhouse_drivererrorsnetworkerror-code-210-connection-reset-by-peer">1. clickhouse_driver.errors.NetworkError: Code: 210. Connection reset by peer</h2>
 <p>By default, <code>clickhouse-driver</code> uses non-secure <code>TCP</code> connection, which would throw this error. We need to add 
 <code>secure=True</code> to the client constructor to use secure connection.</p>
-<pre><code class="language-python">client = Client(
-    ### other parameters
-    secure=True,
-)
-</code></pre>
-<p>Some other error messages that might indicate the same issue:
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="c1">### other parameters</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">secure</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">)</span>
+</span></code></pre></div>
+Some other error messages that might indicate the same issue:
 - <code>clickhouse_driver.errors.NetworkError: Code: 210. Connection reset by peer</code>
 - <code>Error on socket shutdown: [Errno 57] Socket is not connected</code>
 - <code>ConnectionResetError: [Errno 54] Connection reset by peer</code></p>
@@ -1760,13 +1760,13 @@ HTTP, the port is <code>8123</code>.</p>
 <p>This error is thrown when the username is not correct. For API key authentication, the username should always be <code>bytehouse</code>.</p>
 <h2 id="4-clickhouse_connectdriverexceptionsoperationalerror-error-connection-aborted-connectionreseterror54-connection-reset-by-peer">4. clickhouse_connect.driver.exceptions.OperationalError: Error ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))</h2>
 <p>By default, <code>clickhouse-connect</code> uses non-secure <code>HTTP</code> connection, which would throw this error. We need to add 
-<code>secure=True</code> to the client constructor to use secure connection.</p>
-<pre><code class="language-python">client = clickhouse_connect.get_client(
-    ### other parameters
-    secure=True,
-)
-</code></pre>
-<p>Some other error messages that might indicate the same issue:
+<code>secure=True</code> to the client constructor to use secure connection.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">client</span> <span class="o">=</span> <span class="n">clickhouse_connect</span><span class="o">.</span><span class="n">get_client</span><span class="p">(</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="c1">### other parameters</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">secure</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">)</span>
+</span></code></pre></div>
+Some other error messages that might indicate the same issue:
 - <code>clickhouse_connect.driver.exceptions.OperationalError: Error ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))</code>
 - <code>urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))</code>
 - <code>ConnectionResetError: [Errno 54] Connection reset by peer</code></p>

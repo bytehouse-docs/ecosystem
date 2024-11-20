@@ -1800,25 +1800,25 @@
 </tbody>
 </table>
 <h2 id="installation">Installation</h2>
-<p>The package can be installed via <code>pip</code>:</p>
-<pre><code class="language-bash">pip install clickhouse-connect
-</code></pre>
-<p>Optionally, you can install <code>cython</code> package to build and enable the C/Cython optimizations</p>
-<pre><code class="language-bash">pip install cython
-</code></pre>
+<p>The package can be installed via <code>pip</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>clickhouse-connect
+</span></code></pre></div>
+Optionally, you can install <code>cython</code> package to build and enable the C/Cython optimizations
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>cython
+</span></code></pre></div></p>
 <h2 id="client-construction">Client Construction</h2>
 <h3 id="1-passing-parameters">1. Passing parameters</h3>
-<pre><code class="language-python">import clickhouse_connect
-
-client = clickhouse_connect.get_client(
-    host=&quot;gateway-v2.bytehouse-cn-{REGION}.volces.com&quot;,
-    port=8123,
-    username=&quot;bytehouse&quot;,
-    password=&quot;{API_KEY}&quot;,
-    database=&quot;{DATABASE}&quot;,
-    secure=True,
-)
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">clickhouse_connect</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">client</span> <span class="o">=</span> <span class="n">clickhouse_connect</span><span class="o">.</span><span class="n">get_client</span><span class="p">(</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;gateway-v2.bytehouse-cn-</span><span class="si">{REGION}</span><span class="s2">.volces.com&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">port</span><span class="o">=</span><span class="mi">8123</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">username</span><span class="o">=</span><span class="s2">&quot;bytehouse&quot;</span><span class="p">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{API_KEY}</span><span class="s2">&quot;</span><span class="p">,</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{DATABASE}</span><span class="s2">&quot;</span><span class="p">,</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">secure</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">)</span>
+</span></code></pre></div>
 <h3 id="2-passing-connection-string">2. Passing connection string</h3>
 <p>TODO</p>
 
