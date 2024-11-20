@@ -2058,7 +2058,7 @@ The package can be installed via <code>pip</code>:
 </tbody>
 </table>
 <h2 id="specifying-server-settings">Specifying Server Settings</h2>
-<p>if setting is supported by ByteHouse server (e.g. virtual_warehouse) and missed in the open source driver package, it 
+<p>if setting is supported by <code>ByteHouse</code> server (e.g. <code>virtual_warehouse</code>) and missed in the open source driver package, it 
 can be added by monkey patching. Serialization type of the setting value needs to be provided.
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">clickhouse_driver</span> <span class="kn">import</span> <span class="n">Client</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">from</span> <span class="nn">clickhouse_driver.settings.available</span> <span class="kn">import</span> <span class="n">settings</span> <span class="k">as</span> <span class="n">available_settings</span><span class="p">,</span> <span class="n">SettingString</span>
@@ -2084,7 +2084,7 @@ can be added by monkey patching. Serialization type of the setting value needs t
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">client</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">,</span> <span class="n">query_id</span><span class="o">=</span><span class="n">query_id</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="inserting-data-from-pandas-dataframe">Inserting data from Pandas dataframe</h2>
-<p><code>'use_numpy': True</code> setting is required for Numpy / Pandas package support.
+<p><code>'use_numpy': True</code> setting is required for <code>Numpy</code> / <code>Pandas</code> package support.
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">clickhouse_driver</span> <span class="kn">import</span> <span class="n">Client</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
@@ -2118,13 +2118,13 @@ can be added by monkey patching. Serialization type of the setting value needs t
 </span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="c1"># 1  2  banana</span>
 </span></code></pre></div></p>
 <h2 id="inserting-data-from-csv-file">Inserting data from CSV file</h2>
-<p>Let’s assume you have the following data in CSV file:
+<p>Let’s assume you have the following data in <code>CSV</code> file:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>time,order,qty
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>2019-08-01 15:23:14,New order1,5
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>2019-08-05 09:14:45,New order2,3
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>2019-08-13 12:20:32,New order3,7
 </span></code></pre></div>
-Data can be inserted into ClickHouse in the following way:
+Data can be inserted into <code>ByteHouse</code> in the following way:
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">DictReader</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
