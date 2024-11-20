@@ -19,7 +19,6 @@ pip install cython
 ```
 
 ## Client Construction
-### 1. Passing parameters
 ```python
 import clickhouse_connect
 
@@ -32,5 +31,4 @@ client = clickhouse_connect.get_client(
     secure=True,
 )
 ```
-### 2. Passing connection string
-TODO
+

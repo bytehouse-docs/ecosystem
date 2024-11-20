@@ -1,5 +1,5 @@
-# Work in Progress
+# ByteHouse Driver (TCP)
 
-This page is currently under construction. Please check back later for updates!
-
-Thank you for your patience.
+ByteHouse python driver is no longer going to be maintained. We recommend using the open source 
+[ClickHouse TCP Driver](clickhouse-driver-tcp.md) / [ClickHouse HTTP Connect](clickhouse-connect-http.md) 
+for your projects.
